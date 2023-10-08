@@ -1,6 +1,180 @@
 @import './colors.scss';
 
-.theme {
-	background-color: $secondaryBtn1;
-	height: 100px;
+@mixin flex {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+@mixin button {
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 40px;
+}
+
+.theme-one {
+	@include flex;
+	background-color: $bg1;
+	min-height: 100vh;
+
+	.calculator {
+		display: flex;
+		flex-direction: column;
+		height: 708px;
+
+		.header {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+
+			.logo {
+				color: white;
+				font-size: 32px;
+				letter-spacing: -0.5px;
+			}
+
+			.theme__switcher {
+				display: flex;
+				gap: 26px;
+				align-items: center;
+
+				p {
+					color: white;
+					font-size: 12px;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+				}
+
+				.slider {
+					display: flex;
+					flex-direction: column;
+					gap: 5px;
+					width: 71px;
+
+					.theme__numbers {
+						display: flex;
+						gap: 8px;
+						justify-content: space-evenly;
+					}
+
+					.slider__container {
+						background-color: $buttonField1;
+						border-radius: 13px;
+						display: flex;
+						justify-content: start;
+						height: 26px;
+						padding: 5px;
+						width: 100%;
+
+						.circle {
+							background-color: $equalBtn1;
+							border-radius: 50%;
+							cursor: pointer;
+							height: 16px;
+							transition: all 0.1s ease-in-out;
+							width: 16px;
+
+							&:hover {
+								background-color: $equalBtnHover1;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.screen {
+			background-color: $screen1;
+			border-radius: 10px;
+			color: white;
+			padding: 40px 32px 36px 32px;
+			margin-top: 32px;
+			text-align: right;
+
+			.result {
+				font-size: 56px;
+				letter-spacing: -1px;
+			}
+		}
+
+		.buttons {
+			background-color: $buttonField1;
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			margin-top: 24px;
+			padding: 30px;
+
+			.secondary__button {
+				@include button;
+				background-color: $secondaryBtn1;
+				box-shadow: 0px -4px 0px 0px $secondaryBtnShadow1 inset;
+				font-size: 28px;
+				height: 64px;
+				text-transform: uppercase;
+				transition: all 0.15s ease-in-out;
+
+				&:hover {
+					background-color: $secondaryBtnHover1;
+				}
+			}
+
+			.tertiary__button {
+				@include button;
+				background-color: $equalBtn1;
+				box-shadow: 0px -4px 0px 0px $equalBtnShadow1 inset;
+				font-size: 28px;
+				height: 64px;
+				text-transform: uppercase;
+				transition: all 0.15s ease-in-out;
+
+				&:hover {
+					background-color: $equalBtnHover1;
+				}
+			}
+
+			.calculation__buttons {
+				display: grid;
+				gap: 24px;
+				grid-template-columns: repeat(4, 1fr);
+				grid-template-rows: repeat(4, 1fr);
+
+				.primary__button {
+					@include button;
+					background-color: $primaryBtn1;
+					box-shadow: 0px -4px 0px 0px $primaryBtnShadow1 inset;
+					color: $text1;
+					height: 64px;
+					transition: all 0.15s ease-in-out;
+					width: 101px;
+
+					&:hover {
+						background-color: $primaryBtnHover1;
+					}
+				}
+			}
+
+			.result__buttons {
+				display: grid;
+				gap: 24px;
+				grid-template-rows: 1fr;
+				grid-template-columns: 1fr 1fr;
+				margin-top: 24px;
+			}
+		}
+	}
+}
+
+.theme-two {
+	@include flex;
+	background-color: $bg2;
+	min-height: 100vh;
+}
+
+.theme-three {
+	@include flex;
+	background-color: $bg3;
+	min-height: 100vh;
 }
