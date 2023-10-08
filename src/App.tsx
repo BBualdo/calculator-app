@@ -1,5 +1,12 @@
+import { Fragment } from 'react';
+import Calculator from './components/Calculator';
+
 const App = () => {
-	return <div>App</div>;
+	return (
+		<Fragment>
+			<Calculator />
+		</Fragment>
+	);
 };
 
 export default App;

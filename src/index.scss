@@ -1,3 +1,48 @@
-body {
-	background-color: black;
-}
+//--------------------
+//------COLORS--------
+//--------------------
+
+$themes: (
+	theme1: (
+		bg: #3a4663,
+		text: #434a59,
+		screen: #181f33,
+		primaryBtn: #eae3dc,
+		primaryBtnShadow: #b3a497,
+		primaryBtnHover: #fffffe,
+		secondaryBtn: #647198,
+		secondaryBtnShadow: #414e73,
+		secondaryBtnHover: #a2b2e1,
+		equalBtn: #d03f2f,
+		equalBtnShadow: #93261a,
+		equalBtnHover: #f96b5b,
+	),
+	theme2: (
+		bg: #e6e6e6,
+		text: #36362c,
+		screen: #eeeeee,
+		primaryBtn: #36362c,
+		primaryBtnShadow: #a79e91,
+		primaryBtnHover: #ffffff,
+		secondaryBtn: #378187,
+		secondaryBtnShadow: #1b6066,
+		secondaryBtnHover: #62b5bc,
+		equalBtn: #c85402,
+		equalBtnShadow: #873901,
+		equalBtnHover: #ff8a38,
+	),
+	theme3: (
+		bg: #17062a,
+		text: #ffe53d,
+		screen: #1e0936,
+		primaryBtn: #331c4d,
+		primaryBtnShadow: #881c9e,
+		primaryBtnHover: #6c34ac,
+		secondaryBtn: #56077c,
+		secondaryBtnShadow: #be15f4,
+		secondaryBtnHover: #8631af,
+		equalBtn: #00ded0,
+		equalBtnShadow: #6cf9f1,
+		equalBtnHover: #93fff8,
+	),
+);
