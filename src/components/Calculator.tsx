@@ -2,7 +2,7 @@ import styles from '../scss/Calculator.module.scss';
 
 const Calculator = () => {
 	return (
-		<main className={styles['theme-one']}>
+		<main className={styles['theme-three']}>
 			<div className={styles.calculator}>
 				<div className={styles.header}>
 					<div className={styles.logo}>calc</div>
