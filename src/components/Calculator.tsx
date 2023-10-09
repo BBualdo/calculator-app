@@ -17,11 +17,11 @@ const Calculator = () => {
 
 	const circlePosition = () => {
 		if (theme === 'one') {
-			return 'start';
+			return '0';
 		} else if (theme === 'two') {
-			return 'center';
+			return '130%';
 		} else {
-			return 'end';
+			return '280%';
 		}
 	};
 
@@ -38,11 +38,12 @@ const Calculator = () => {
 								<p>2</p>
 								<p>3</p>
 							</div>
-							<div
-								className={styles.slider__container}
-								style={{ justifyContent: circlePosition() }}
-							>
-								<div onClick={themeSwitchHandler} className={styles.circle} />
+							<div className={styles.slider__container}>
+								<div
+									onClick={themeSwitchHandler}
+									className={styles.circle}
+									style={{ translate: circlePosition() }}
+								/>
 							</div>
 						</div>
 					</div>
