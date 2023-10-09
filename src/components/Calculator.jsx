@@ -28,14 +28,14 @@ const Calculator = () => {
 
 	const [calculation, setCalculation] = useState('');
 
-	const onNumClick = (event: any) => {
+	const onNumClick = (event) => {
 		if (['.'].includes(calculation)) {
 			return;
 		}
 		setCalculation((prevCalc) => prevCalc + event.target.value);
 	};
 
-	const onSignClick = (event: any) => {
+	const onSignClick = (event) => {
 		if (['+', '-', '*', '/'].includes(calculation[calculation.length - 1])) {
 			return;
 		}

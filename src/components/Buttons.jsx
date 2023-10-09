@@ -1,6 +1,6 @@
 import styles from '../scss/Calculator.module.scss';
 
-const Buttons = (props: any) => {
+const Buttons = (props) => {
 	return (
 		<div className={styles.buttons}>
 			<div className={styles.calculation__buttons}>
