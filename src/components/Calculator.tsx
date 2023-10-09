@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import Buttons from './Buttons';
 import styles from '../scss/Calculator.module.scss';
 
 const Calculator = () => {
@@ -23,6 +24,35 @@ const Calculator = () => {
 		} else {
 			return '280%';
 		}
+	};
+
+	const [calculation, setCalculation] = useState('');
+
+	const onNumClick = (event) => {
+		if (['.'].includes(calculation)) {
+			return;
+		}
+		setCalculation((prevCalc) => prevCalc + event.target.value);
+	};
+
+	const onSignClick = (event) => {
+		if (['+', '-', '*', '/'].includes(calculation[calculation.length - 1])) {
+			return;
+		}
+		setCalculation(eval(calculation));
+		setCalculation((prevCalc) => prevCalc + event.target.value);
+	};
+
+	const onResetClick = () => {
+		setCalculation('');
+	};
+
+	const calculate = () => {
+		setCalculation(String(eval(calculation)));
+	};
+
+	const onDelete = () => {
+		setCalculation(calculation.slice(0, -1));
 	};
 
 	return (
@@ -49,32 +79,15 @@ const Calculator = () => {
 					</div>
 				</div>
 				<div className={styles.screen}>
-					<div className={styles.result}>399,981</div>
+					<div className={styles.result}>{calculation || 0}</div>
 				</div>
-				<div className={styles.buttons}>
-					<div className={styles.calculation__buttons}>
-						<button className={styles.primary__button}>7</button>
-						<button className={styles.primary__button}>8</button>
-						<button className={styles.primary__button}>9</button>
-						<button className={styles.secondary__button}>Del</button>
-						<button className={styles.primary__button}>4</button>
-						<button className={styles.primary__button}>5</button>
-						<button className={styles.primary__button}>6</button>
-						<button className={styles.primary__button}>+</button>
-						<button className={styles.primary__button}>1</button>
-						<button className={styles.primary__button}>2</button>
-						<button className={styles.primary__button}>3</button>
-						<button className={styles.primary__button}>-</button>
-						<button className={styles.primary__button}>.</button>
-						<button className={styles.primary__button}>0</button>
-						<button className={styles.primary__button}>/</button>
-						<button className={styles.primary__button}>x</button>
-					</div>
-					<div className={styles.result__buttons}>
-						<button className={styles.secondary__button}>Reset</button>
-						<button className={styles.tertiary__button}>=</button>
-					</div>
-				</div>
+				<Buttons
+					onCalcClick={onNumClick}
+					onSignClick={onSignClick}
+					onReset={onResetClick}
+					onCalculate={calculate}
+					onDel={onDelete}
+				/>
 			</div>
 		</main>
 	);
