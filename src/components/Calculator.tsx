@@ -1,8 +1,32 @@
+import { useState } from 'react';
+
 import styles from '../scss/Calculator.module.scss';
 
 const Calculator = () => {
+	const [theme, setTheme] = useState('one');
+
+	const themeSwitchHandler = () => {
+		if (theme === 'one') {
+			setTheme('two');
+		} else if (theme === 'two') {
+			setTheme('three');
+		} else {
+			setTheme('one');
+		}
+	};
+
+	const circlePosition = () => {
+		if (theme === 'one') {
+			return 'start';
+		} else if (theme === 'two') {
+			return 'center';
+		} else {
+			return 'end';
+		}
+	};
+
 	return (
-		<main className={styles['theme-three']}>
+		<main className={styles[`theme-${theme}`]}>
 			<div className={styles.calculator}>
 				<div className={styles.header}>
 					<div className={styles.logo}>calc</div>
@@ -14,8 +38,11 @@ const Calculator = () => {
 								<p>2</p>
 								<p>3</p>
 							</div>
-							<div className={styles.slider__container}>
-								<div className={styles.circle} />
+							<div
+								className={styles.slider__container}
+								style={{ justifyContent: circlePosition() }}
+							>
+								<div onClick={themeSwitchHandler} className={styles.circle} />
 							</div>
 						</div>
 					</div>
