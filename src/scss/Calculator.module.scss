@@ -21,6 +21,9 @@
 	.calculator {
 		display: flex;
 		flex-direction: column;
+		@media (max-width: 600px) {
+			scale: 55%;
+		}
 
 		.header {
 			align-items: center;
@@ -173,6 +176,9 @@
 	.calculator {
 		display: flex;
 		flex-direction: column;
+		@media (max-width: 600px) {
+			scale: 55%;
+		}
 
 		.header {
 			align-items: center;
@@ -326,6 +332,9 @@
 	.calculator {
 		display: flex;
 		flex-direction: column;
+		@media (max-width: 600px) {
+			scale: 55%;
+		}
 
 		.header {
 			align-items: center;
