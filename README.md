@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/react-sass-calculator-app-tried-to-build-it-with-typescript-EPaZQ3z1y5]
+- Live Site URL: [https://bbualdo-calculator-app.netlify.app]
 
 ## My process
 

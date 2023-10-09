@@ -112,6 +112,7 @@
 				@include button;
 				background-color: $secondaryBtn1;
 				box-shadow: 0px -4px 0px 0px $secondaryBtnShadow1 inset;
+				color: white;
 				font-size: 28px;
 				height: 64px;
 				text-transform: uppercase;
@@ -126,6 +127,7 @@
 				@include button;
 				background-color: $equalBtn1;
 				box-shadow: 0px -4px 0px 0px $equalBtnShadow1 inset;
+				color: white;
 				font-size: 28px;
 				height: 64px;
 				text-transform: uppercase;
