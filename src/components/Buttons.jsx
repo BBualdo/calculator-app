@@ -5,6 +5,7 @@ const Buttons = (props) => {
 		<div className={styles.buttons}>
 			<div className={styles.calculation__buttons}>
 				<button
+					id='seven'
 					value='7'
 					onClick={props.onCalcClick}
 					className={styles.primary__button}
@@ -12,6 +13,7 @@ const Buttons = (props) => {
 					7
 				</button>
 				<button
+					id='eight'
 					value='8'
 					onClick={props.onCalcClick}
 					className={styles.primary__button}
@@ -19,16 +21,22 @@ const Buttons = (props) => {
 					8
 				</button>
 				<button
+					id='nine'
 					value='9'
 					onClick={props.onCalcClick}
 					className={styles.primary__button}
 				>
 					9
 				</button>
-				<button onClick={props.onDel} className={styles.secondary__button}>
+				<button
+					id='delete'
+					onClick={props.onDel}
+					className={styles.secondary__button}
+				>
 					Del
 				</button>
 				<button
+					id='four'
 					value='4'
 					onClick={props.onCalcClick}
 					className={styles.primary__button}
@@ -36,6 +44,7 @@ const Buttons = (props) => {
 					4
 				</button>
 				<button
+					id='five'
 					value='5'
 					onClick={props.onCalcClick}
 					className={styles.primary__button}
@@ -43,6 +52,7 @@ const Buttons = (props) => {
 					5
 				</button>
 				<button
+					id='six'
 					value='6'
 					onClick={props.onCalcClick}
 					className={styles.primary__button}
@@ -50,6 +60,7 @@ const Buttons = (props) => {
 					6
 				</button>
 				<button
+					id='add'
 					value='+'
 					onClick={props.onSignClick}
 					className={styles.primary__button}
@@ -57,6 +68,7 @@ const Buttons = (props) => {
 					+
 				</button>
 				<button
+					id='one'
 					value='1'
 					onClick={props.onCalcClick}
 					className={styles.primary__button}
@@ -64,6 +76,7 @@ const Buttons = (props) => {
 					1
 				</button>
 				<button
+					id='two'
 					value='2'
 					onClick={props.onCalcClick}
 					className={styles.primary__button}
@@ -71,6 +84,7 @@ const Buttons = (props) => {
 					2
 				</button>
 				<button
+					id='three'
 					value='3'
 					onClick={props.onCalcClick}
 					className={styles.primary__button}
@@ -78,6 +92,7 @@ const Buttons = (props) => {
 					3
 				</button>
 				<button
+					id='subtract'
 					value='-'
 					onClick={props.onSignClick}
 					className={styles.primary__button}
@@ -85,6 +100,7 @@ const Buttons = (props) => {
 					-
 				</button>
 				<button
+					id='decimal'
 					value='.'
 					onClick={props.onCalcClick}
 					className={styles.primary__button}
@@ -92,6 +108,7 @@ const Buttons = (props) => {
 					.
 				</button>
 				<button
+					id='zero'
 					value='0'
 					onClick={props.onCalcClick}
 					className={styles.primary__button}
@@ -99,6 +116,7 @@ const Buttons = (props) => {
 					0
 				</button>
 				<button
+					id='divide'
 					value='/'
 					onClick={props.onSignClick}
 					className={styles.primary__button}
@@ -106,6 +124,7 @@ const Buttons = (props) => {
 					/
 				</button>
 				<button
+					id='multiply'
 					value='*'
 					onClick={props.onSignClick}
 					className={styles.primary__button}
@@ -114,10 +133,18 @@ const Buttons = (props) => {
 				</button>
 			</div>
 			<div className={styles.result__buttons}>
-				<button onClick={props.onReset} className={styles.secondary__button}>
+				<button
+					id='clear'
+					onClick={props.onReset}
+					className={styles.secondary__button}
+				>
 					Reset
 				</button>
-				<button onClick={props.onCalculate} className={styles.tertiary__button}>
+				<button
+					id='equals'
+					onClick={props.onCalculate}
+					className={styles.tertiary__button}
+				>
 					=
 				</button>
 			</div>

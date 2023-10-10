@@ -29,18 +29,35 @@ const Calculator = () => {
 	const [calculation, setCalculation] = useState('');
 
 	const onNumClick = (event) => {
-		if (['.'].includes(calculation)) {
+		const newValue = event.target.value;
+
+		const parts = calculation.split(/[+\-*/]/);
+		const lastPart = parts[parts.length - 1];
+
+		if (lastPart.includes('.') && newValue === '.') {
 			return;
 		}
-		setCalculation((prevCalc) => prevCalc + event.target.value);
+
+		if (lastPart === '' && newValue === '.') {
+			return;
+		}
+
+		if (calculation === '0' && newValue !== '0') {
+			setCalculation(newValue);
+		} else if (calculation !== '0') {
+			setCalculation((prevCalc) => prevCalc + newValue);
+		}
 	};
 
 	const onSignClick = (event) => {
-		if (['+', '-', '*', '/'].includes(calculation[calculation.length - 1])) {
-			return;
+		const newValue = event.target.value;
+		const lastChar = calculation.charAt(calculation.length - 1);
+
+		if (['+', '*', '/'].includes(lastChar) && newValue !== '-') {
+			setCalculation((prevCalc) => prevCalc.slice(0, -1) + newValue);
+		} else {
+			setCalculation((prevCalc) => prevCalc + newValue);
 		}
-		setCalculation(eval(calculation));
-		setCalculation((prevCalc) => prevCalc + event.target.value);
 	};
 
 	const onResetClick = () => {
@@ -78,7 +95,7 @@ const Calculator = () => {
 						</div>
 					</div>
 				</div>
-				<div className={styles.screen}>
+				<div id='display' className={styles.screen}>
 					<div className={styles.result}>{calculation || 0}</div>
 				</div>
 				<Buttons
